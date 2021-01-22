@@ -1,7 +1,7 @@
 <?php
 Route::get('users/search', 'AdminUserController@index');
 
-Route::get('users/index', 'AdminUserController@index');
+Route::get('users/index', 'AdminUserController@index')->name('users.index');
 Route::get('users/create', 'AdminUserController@create');
 Route::post('users/store', 'AdminUserController@store');
 
