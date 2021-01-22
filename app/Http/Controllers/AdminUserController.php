@@ -15,17 +15,9 @@ class AdminUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $keyword = $request->get('search');
-        $perPage = 10;
-
-        if (!empty($keyword)) {
-            $user = User::latest()->paginate($perPage);
-        } else {
-            $user = User::latest()->paginate($perPage);
-        }
-
+        $user = User::all();
         return view('directory.posts.index', compact('user'));
     }
 
